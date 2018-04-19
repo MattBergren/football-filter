@@ -1,13 +1,43 @@
 <% include partials/header %>
-<div class="container">
+<div class="ui container">
     <header>
-        <h1>NFL 2017-18 Team Leaders</h1>
+        <h1>leaders</h1>
     </header>
-    <aside>
-        <h2>Filter by:</h2>
-        
-    </aside>
-    <main>Main area</main>
+    <div class="ui stackable grid">
+        <div class="five wide column">
+            <aside>
+                <div class="ui sub header">Filter by</div>
+                <select class="ui fluid search dropdown" id="team-select" name="teams">
+                <option value="">Teams</option>
+                <% teams.forEach(function(team){ %>
+                    <option value="<%=team._id%>"><%=team.city%>&nbsp;<%=team.name%></option> 
+                <% });%>
+                </select>
+            </aside>
+        </div>
+        <div class="eleven wide column">
+            <main id="team-list">
+                <div class="ui cards">
+                    <% players.forEach(function(player){ %>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header"><%=player.firstName%>&nbsp;<%=player.lastName%></div>
+                            <div class="meta">
+                                <% teams.forEach(function(team){ %>
+                                    <% if(team._id === player.team_id) { %>
+                                        <%=team.name%>
+                                    <% } %>
+                                <% });%>
+                            </div>
+                        </div>
+                    </div>
+                    <% });%>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+  
 </div>
 
 <% include partials/footer %>
