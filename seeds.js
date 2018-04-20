@@ -3,127 +3,285 @@ var Team = require('./models/team');
 
 var playerData = [
     {
-        firstName: "Tom",
-        lastName: "Brady",
+        firstName: "Carson",
+        lastName: "Wentz",
         position: "QB",
-        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BRA371156.png",
-        team_id: "ne",
-        passYds: 4577,
-        passTds: 32,
-        rushYds: 28,
-        rushTds: 0,
-        recYds: 0,
-        recTds: 0,
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/WEN615770.png",
+        team_id: "phi",
+        passYds: 3296,
+        passTds: 33,
+        passInt: 7,
         proBowler: true
     },
     {
-        firstName: "Dion",
-        lastName: "Lewis",
+        firstName: "Zach",
+        lastName: "Ertz",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ERT800920.png",
+        team_id: "phi",
+        recYds: 824,
+        recTds: 8,
+        proBowler: true
+    },
+    {
+        firstName: "LeGarrette",
+        lastName: "Blount",
         position: "RB",
-        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/LEW218646.png",
-        team_id: "ne",
-        passYds: 0,
-        passTds: 0,
-        rushYds: 896,
-        rushTds: 6,
-        recYds: 214,
-        recTds: 3,
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BLO626278.png",
+        team_id: "phi",
+        rushYds: 766,
+        rushTds: 2,
+        recYds: 50,
+        recTds: 1,
         proBowler: false
     },
     {
-        firstName: "Ben",
-        lastName: "Roethlisberger ",
+        firstName: "Alshon",
+        lastName: "Jeffery",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/JEF498860.png",
+        team_id: "phi",
+        recYds: 789,
+        recTds: 9,
+        proBowler: false
+    },
+    {
+        firstName: "Dak",
+        lastName: "Prescott",
         position: "QB",
-        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ROE750381.png",
-        team_id: "pit",
-        passYds: 4251,
-        passTds: 28,
-        rushYds: 47,
-        rushTds: 0,
-        recYds: 0,
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/PRE285723.png",
+        team_id: "dal",
+        passYds: 3324,
+        passTds: 22,
+        passInt: 13,
+        proBowler: false
+    },
+    {
+        firstName: "Ezekiel",
+        lastName: "Elliot",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ELL289284.png",
+        team_id: "dal",
+        rushYds: 983,
+        rushTds: 7,
+        recYds: 269,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Dez",
+        lastName: "Bryant",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BRY336027.png",
+        team_id: "dal",
+        recYds: 838,
+        recTds: 6,
+        proBowler: false
+    },
+    {
+        firstName: "Jason",
+        lastName: "Witten",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BRY336027.png",
+        team_id: "dal",
+        recYds: 560,
+        recTds: 5,
+        proBowler: false
+    },
+    {
+        firstName: "Eli",
+        lastName: "Manning",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/MAN473170.png",
+        team_id: "nyg",
+        passYds: 3468,
+        passTds: 19,
+        passInt: 13,
+        proBowler: false
+    },
+    {
+        firstName: "Orleans",
+        lastName: "Darkwa",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/DAR352254.png",
+        team_id: "nyg",
+        rushYds: 751,
+        rushTds: 5,
+        recYds: 116,
         recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Evan",
+        lastName: "Engram",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ENG726325.png",
+        team_id: "nyg",
+        recYds: 722,
+        recTds: 6,
+        proBowler: false
+    },
+    {
+        firstName: "Sterling",
+        lastName: "Shepard",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/SHE495754.png",
+        team_id: "nyg",
+        recYds: 731,
+        recTds: 2,
         proBowler: false
     }
 ];
 
 var teamData = [
     {
-        _id: "ne",
-        city: "New England",
-        name: "Patriots",
-        primaryColor: "#0C2340",
-        seondaryColor: "#C8102E",
-        img: "http://content.sportslogos.net/logos/7/151/thumbs/y71myf8mlwlk8lbgagh3fd5e0.gif",
-        conference: "AFC"
+        _id: "phi",
+        city: "Philadelphia",
+        name: "Eagles",
+        primaryColor: "#004C54",
+        seondaryColor: "#A5ACAF",
+        img: "http://content.sportslogos.net/logos/7/167/thumbs/960.gif",
+        conference: "NFC"
     },
     {
-        _id: "buf",
-        city: "Buffalo",
-        name: "Bills",
-        primaryColor: "#003087",
-        seondaryColor: "#C8102E",
-        img: "http://content.sportslogos.net/logos/7/149/thumbs/n0fd1z6xmhigb0eej3323ebwq.gif",
-        conference: "AFC"
+        _id: "dal",
+        city: "Dallas",
+        name: "Cowboys",
+        primaryColor: "#041E42",
+        seondaryColor: "#869397",
+        img: "http://content.sportslogos.net/logos/7/165/thumbs/406.gif",
+        conference: "NFC"
     },
     {
-        _id: "mia",
-        city: "Miami",
-        name: "Dolphins",
-        primaryColor: "#008E97",
-        seondaryColor: "#F58220",
-        img: "http://content.sportslogos.net/logos/7/150/thumbs/15041052013.gif",
-        conference: "AFC"
-    },
-    {
-        _id: "nyj",
+        _id: "nyg",
         city: "New York",
-        name: "Jets",
-        primaryColor: "#2A433A",
-        seondaryColor: "#FFFFFF",
-        img: "http://content.sportslogos.net/logos/7/152/thumbs/v7tehkwthrwefgounvi7znf5k.gif",
-        conference: "AFC"
+        name: "Giants",
+        primaryColor: "#0B2265",
+        seondaryColor: "#A71930",
+        img: "http://content.sportslogos.net/logos/7/166/thumbs/919.gif",
+        conference: "NFC"
     },
     {
-        _id: "pit",
-        city: "Pittsburgh",
-        name: "Steelers",
-        primaryColor: "#FFB81C",
+        _id: "was",
+        city: "Washington",
+        name: "Redskins",
+        primaryColor: "#651D32",
+        seondaryColor: "#FFB81C",
+        img: "http://content.sportslogos.net/logos/7/168/thumbs/im5xz2q9bjbg44xep08bf5czq.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "min",
+        city: "Minnesota",
+        name: "Vikings",
+        primaryColor: "#4F2683",
+        seondaryColor: "#FFC62F",
+        img: "http://content.sportslogos.net/logos/7/172/thumbs/17227042013.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "det",
+        city: "Detriot",
+        name: "Lions",
+        primaryColor: "#0069B1",
+        seondaryColor: "#A2AAAD",
+        img: "http://content.sportslogos.net/logos/7/170/thumbs/17013982017.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "gb",
+        city: "Green Bay",
+        name: "Packers",
+        primaryColor: "#183028",
+        seondaryColor: "#FFB81C",
+        img: "http://content.sportslogos.net/logos/7/171/thumbs/dcy03myfhffbki5d7il3.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "chi",
+        city: "Chicago",
+        name: "Bears",
+        primaryColor: "#0B162A",
+        seondaryColor: "#C83803",
+        img: "http://content.sportslogos.net/logos/7/169/thumbs/364.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "car",
+        city: "Carolina",
+        name: "Panthers",
+        primaryColor: "#0085CA",
         seondaryColor: "#101820",
-        img: "http://content.sportslogos.net/logos/7/156/thumbs/970.gif",
-        conference: "AFC"
+        img: "http://content.sportslogos.net/logos/7/174/thumbs/f1wggq2k8ql88fe33jzhw641u.gif",
+        conference: "NFC"
     },
     {
-        _id: "bal",
-        city: "Baltimore",
-        name: "Ravens",
-        primaryColor: "#24135F",
+        _id: "atl",
+        city: "Atlanta",
+        name: "Falcons",
+        primaryColor: "#A6192E",
         seondaryColor: "#101820",
-        img: "http://content.sportslogos.net/logos/7/153/thumbs/318.gif",
-        conference: "AFC"
+        img: "http://content.sportslogos.net/logos/7/173/thumbs/299.gif",
+        conference: "NFC"
     },
     {
-        _id: "cin",
-        city: "Cincinnati",
-        name: "Bengals",
-        primaryColor: "#FC4C02",
+        _id: "tb",
+        city: "Tampa Bay",
+        name: "Buccaneers",
+        primaryColor: "#C8102E",
+        seondaryColor: "#3D3935",
+        img: "http://content.sportslogos.net/logos/7/176/thumbs/17636702014.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "nor",
+        city: "New Orleans",
+        name: "Saints",
+        primaryColor: "#D3BC8D",
         seondaryColor: "#101820",
-        img: "http://content.sportslogos.net/logos/7/154/thumbs/403.gif",
-        conference: "AFC"
+        img: "http://content.sportslogos.net/logos/7/175/thumbs/907.gif",
+        conference: "NFC"
     },
     {
-        _id: "cle",
-        city: "Cleveland",
-        name: "Browns",
-        primaryColor: "#382F2D",
-        seondaryColor: "#EB3300",
-        img: "http://content.sportslogos.net/logos/7/154/thumbs/403.gif",
-        conference: "AFC"
+        _id: "lar",
+        city: "Los Angeles",
+        name: "Rams",
+        primaryColor: "#041E42",
+        seondaryColor: "#866D4B",
+        img: "http://content.sportslogos.net/logos/7/5941/thumbs/594179532017.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "sea",
+        city: "Seattle",
+        name: "Seahawks",
+        primaryColor: "#0C2340",
+        seondaryColor: "#78BE20",
+        img: "http://content.sportslogos.net/logos/7/180/thumbs/pfiobtreaq7j0pzvadktsc6jv.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "arz",
+        city: "Arizona",
+        name: "Cardinals",
+        primaryColor: "#9B2743",
+        seondaryColor: "#000000",
+        img: "http://content.sportslogos.net/logos/7/177/thumbs/kwth8f1cfa2sch5xhjjfaof90.gif",
+        conference: "NFC"
+    },
+    {
+        _id: "sf",
+        city: "San Francisco",
+        name: "49ers",
+        primaryColor: "#A6192E",
+        seondaryColor: "#85714D",
+        img: "http://content.sportslogos.net/logos/7/179/thumbs/17994552009.gif",
+        conference: "NFC"
     }
 
 ];
 
 function seedDB(){
-    // add a few teams to the team collection
     // teamData.forEach(function(seed){
     //     Team.create(seed, function(err, team){
     //         if(err) {
@@ -133,15 +291,15 @@ function seedDB(){
     //         }
     //     });
     // });
-    playerData.forEach(function (seed) {
-        Player.create(seed, function (err, player) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(`added ${player}`);
-            }
-        });
-    });
+    // playerData.forEach(function (seed) {
+    //     Player.create(seed, function (err, player) {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log(`added ${player}`);
+    //         }
+    //     });
+    // });
 }
 
 

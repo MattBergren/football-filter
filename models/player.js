@@ -8,6 +8,7 @@ var playerSchema = new mongoose.Schema({
     team_id: String,
     passYds: Number,
     passTds: Number,
+    passInt: Number,
     rushYds: Number,
     rushTds: Number,
     recYds: Number,

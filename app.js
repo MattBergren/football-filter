@@ -21,7 +21,7 @@ app.use(methodOverride('_method'));
 
 
 app.get('/', function (req, res) {
-    Team.find({}, function(err, allTeams){
+    Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
         if(err) {
             console.log(err);
         } else {
