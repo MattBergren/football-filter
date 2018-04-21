@@ -17,7 +17,7 @@ app.use(expressSanitizer());
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 
-// seedDB();
+seedDB();
 
 
 app.get('/', function (req, res) {

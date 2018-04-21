@@ -130,6 +130,577 @@ var playerData = [
         recYds: 731,
         recTds: 2,
         proBowler: false
+    },
+    {
+        firstName: "Kurt",
+        lastName: "Cousins",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/COU709400.png",
+        team_id: "was",
+        passYds: 4093,
+        passTds: 27,
+        passInt: 13,
+        proBowler: false
+    },
+    {
+        firstName: "Samaje",
+        lastName: "Perine",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/PER095343.png",
+        team_id: "was",
+        rushYds: 603,
+        rushTds: 1,
+        recYds: 182,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Vernon",
+        lastName: "Davis",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/DAV785142.png",
+        team_id: "was",
+        recYds: 648,
+        recTds: 3,
+        proBowler: false
+    },
+    {
+        firstName: "Jamison",
+        lastName: "Crowder",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/CRO697273.png",
+        team_id: "was",
+        recYds: 789,
+        recTds: 3,
+        proBowler: false
+    },
+    {
+        firstName: "Case",
+        lastName: "Keenum",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/KEE690598.png",
+        team_id: "min",
+        passYds: 3547,
+        passTds: 22,
+        passInt: 7,
+        proBowler: false
+    },
+    {
+        firstName: "Latavius",
+        lastName: "Murray",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/MUR671046.png",
+        team_id: "min",
+        rushYds: 842,
+        rushTds: 8,
+        recYds: 103,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Kyle",
+        lastName: "Rudolph",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/RUD559717.png",
+        team_id: "min",
+        recYds: 532,
+        recTds: 8,
+        proBowler: false
+    },
+    {
+        firstName: "Adam",
+        lastName: "Thielen",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/THI510348.png",
+        team_id: "min",
+        recYds: 1276,
+        recTds: 4,
+        proBowler: true
+    },
+    {
+        firstName: "Matthew",
+        lastName: "Stafford",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/STA134157.png",
+        team_id: "det",
+        passYds: 4446,
+        passTds: 29,
+        passInt: 10,
+        proBowler: false
+    },
+    {
+        firstName: "Ameer",
+        lastName: "Abdullah",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ABD647726.png",
+        team_id: "det",
+        rushYds: 552,
+        rushTds: 4,
+        recYds: 162,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Eric",
+        lastName: "Ebron",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/EBR474619.png",
+        team_id: "det",
+        recYds: 574,
+        recTds: 4,
+        proBowler: false
+    },
+    {
+        firstName: "Marvin",
+        lastName: "Jones",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/JON601697.png",
+        team_id: "det",
+        recYds: 1101,
+        recTds: 9,
+        proBowler: false
+    },
+    {
+        firstName: "Aaron",
+        lastName: "Rodgers",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ROD339293.png",
+        team_id: "gb",
+        passYds: 1675,
+        passTds: 16,
+        passInt: 6,
+        proBowler: false
+    },
+    {
+        firstName: "Jamaal",
+        lastName: "Williams",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/WIL328269.png",
+        team_id: "gb",
+        rushYds: 556,
+        rushTds: 4,
+        recYds: 262,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Lance",
+        lastName: "Kendricks",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/KEN102780.png",
+        team_id: "gb",
+        recYds: 203,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Davante",
+        lastName: "Adams",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ADA218591.png",
+        team_id: "gb",
+        recYds: 885,
+        recTds: 10,
+        proBowler: false
+    },
+    {
+        firstName: "Mitchell",
+        lastName: "Trubisky",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/TRU215336.png",
+        team_id: "chi",
+        passYds: 2193,
+        passTds: 7,
+        passInt: 7,
+        proBowler: false
+    },
+    {
+        firstName: "Jordan",
+        lastName: "Howard",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/HOW239418.png",
+        team_id: "chi",
+        rushYds: 1122,
+        rushTds: 9,
+        recYds: 125,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Zach",
+        lastName: "Miller",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/MIL625333.png",
+        team_id: "chi",
+        recYds: 236,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Kendall",
+        lastName: "Wright",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/WRI486076.png",
+        team_id: "chi",
+        recYds: 614,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Cam",
+        lastName: "Newton",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/NEW693984.png",
+        team_id: "car",
+        passYds: 3202,
+        passTds: 22,
+        passInt: 16,
+        proBowler: false
+    },
+    {
+        firstName: "Jonathan",
+        lastName: "Stewart",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/STE770966.png",
+        team_id: "car",
+        rushYds: 680,
+        rushTds: 6,
+        recYds: 52,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Ed",
+        lastName: "Dickson",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/DIC709336.png",
+        team_id: "car",
+        recYds: 437,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Devin",
+        lastName: "Funchess",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/FUN405541.png",
+        team_id: "car",
+        recYds: 840,
+        recTds: 8,
+        proBowler: false
+    },
+    {
+        firstName: "Matt",
+        lastName: "Ryan",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/RYA238179.png",
+        team_id: "atl",
+        passYds: 4095,
+        passTds: 20,
+        passInt: 12,
+        proBowler: false
+    },
+    {
+        firstName: "Devonta",
+        lastName: "Freeman",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/FRE174508.png",
+        team_id: "atl",
+        rushYds: 865,
+        rushTds: 7,
+        recYds: 317,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Austin",
+        lastName: "Hooper",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/HOO570770.png",
+        team_id: "atl",
+        recYds: 526,
+        recTds: 3,
+        proBowler: false
+    },
+    {
+        firstName: "Julio",
+        lastName: "Jones",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/JON640315.png",
+        team_id: "atl",
+        recYds: 1444,
+        recTds: 3,
+        proBowler: true
+    },
+    {
+        firstName: "Jameis",
+        lastName: "Winston",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/WIN623708.png",
+        team_id: "tb",
+        passYds: 3504,
+        passTds: 19,
+        passInt: 11,
+        proBowler: false
+    },
+    {
+        firstName: "Doug",
+        lastName: "Martin",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/MAR578568.png",
+        team_id: "tb",
+        rushYds: 406,
+        rushTds: 3,
+        recYds: 84,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Cameron",
+        lastName: "Brate",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BRA663798.png",
+        team_id: "tb",
+        recYds: 591,
+        recTds: 6,
+        proBowler: false
+    },
+    {
+        firstName: "Mike",
+        lastName: "Evans",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/EVA534309.png",
+        team_id: "tb",
+        recYds: 1001,
+        recTds: 5,
+        proBowler: false
+    },
+    {
+        firstName: "Drew",
+        lastName: "Brees",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BRE229498.png",
+        team_id: "nor",
+        passYds: 4334,
+        passTds: 23,
+        passInt: 8,
+        proBowler: false
+    },
+    {
+        firstName: "Mark",
+        lastName: "Ingram",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/ING656964.png",
+        team_id: "nor",
+        rushYds: 1124,
+        rushTds: 12,
+        recYds: 416,
+        recTds: 0,
+        proBowler: true
+    },
+    {
+        firstName: "Colby",
+        lastName: "Fleener",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/FLE075352.png",
+        team_id: "nor",
+        recYds: 295,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Michael",
+        lastName: "Thomas",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/THO308912.png",
+        team_id: "nor",
+        recYds: 1245,
+        recTds: 5,
+        proBowler: true
+    },
+    {
+        firstName: "Alvin",
+        lastName: "Kamara",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/KAM244058.png",
+        team_id: "nor",
+        rushYds: 728,
+        rushTds: 8,
+        recYds: 826,
+        recTds: 5,
+        proBowler: true
+    },
+    {
+        firstName: "Jared",
+        lastName: "Goff",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GOF219636.png",
+        team_id: "lar",
+        passYds: 3804,
+        passTds: 28,
+        passInt: 7,
+        proBowler: true
+    },
+    {
+        firstName: "Todd",
+        lastName: "Gurley",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GUR000000.png",
+        team_id: "lar",
+        rushYds: 1305,
+        rushTds: 13,
+        recYds: 788,
+        recTds: 6,
+        proBowler: true
+    },
+    {
+        firstName: "Tyler",
+        lastName: "Higbee",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/HIG033222.png",
+        team_id: "lar",
+        recYds: 295,
+        recTds: 1,
+        proBowler: false
+    },
+    {
+        firstName: "Cooper",
+        lastName: "Kupp",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/KUP534597.png",
+        team_id: "lar",
+        recYds: 869,
+        recTds: 5,
+        proBowler: false
+    },
+    {
+        firstName: "Russell",
+        lastName: "Wilson",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/WIL777781.png",
+        team_id: "sea",
+        passYds: 3983,
+        passTds: 34,
+        passInt: 11,
+        proBowler: true
+    },
+    {
+        firstName: "Mike",
+        lastName: "Davis",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/DAV567050.png",
+        team_id: "sea",
+        rushYds: 240,
+        rushTds: 0,
+        recYds: 131,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Jimmy",
+        lastName: "Graham",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GRA207087.png",
+        team_id: "sea",
+        recYds: 520,
+        recTds: 11,
+        proBowler: true
+    },
+    {
+        firstName: "Doug",
+        lastName: "Baldwin",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/BAL312014.png",
+        team_id: "sea",
+        recYds: 991,
+        recTds: 8,
+        proBowler: false
+    },
+    {
+        firstName: "Carson",
+        lastName: "Palmer",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/PAL249055.png",
+        team_id: "arz",
+        passYds: 1978,
+        passTds: 9,
+        passInt: 7,
+        proBowler: false
+    },
+    {
+        firstName: "Adrian",
+        lastName: "Peterson",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/PET260705.png",
+        team_id: "arz",
+        rushYds: 529,
+        rushTds: 2,
+        recYds: 66,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "Jermaine",
+        lastName: "Gresham",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GRE819895.png",
+        team_id: "arz",
+        recYds: 322,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Larry",
+        lastName: "Fitzgerald",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/FIT437493.png",
+        team_id: "arz",
+        recYds: 1156,
+        recTds: 6,
+        proBowler: true
+    },
+    {
+        firstName: "Jimmy",
+        lastName: "Garoppoli",
+        position: "QB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GAR363225.png",
+        team_id: "sf",
+        passYds: 1560,
+        passTds: 7,
+        passInt: 5,
+        proBowler: false
+    },
+    {
+        firstName: "Carlos",
+        lastName: "Hyde",
+        position: "RB",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/HYD402541.png",
+        team_id: "sf",
+        rushYds: 938,
+        rushTds: 8,
+        recYds: 350,
+        recTds: 0,
+        proBowler: false
+    },
+    {
+        firstName: "George",
+        lastName: "Kittle",
+        position: "TE",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/KIT388290.png",
+        team_id: "sf",
+        recYds: 515,
+        recTds: 2,
+        proBowler: false
+    },
+    {
+        firstName: "Marquise",
+        lastName: "Goodwin",
+        position: "WR",
+        image: "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/GOO681722.png",
+        team_id: "sf",
+        recYds: 962,
+        recTds: 2,
+        proBowler: false
     }
 ];
 
@@ -291,15 +862,15 @@ function seedDB(){
     //         }
     //     });
     // });
-    // playerData.forEach(function (seed) {
-    //     Player.create(seed, function (err, player) {
-    //         if (err) {
-    //             console.log(err);
-    //         } else {
-    //             console.log(`added ${player}`);
-    //         }
-    //     });
-    // });
+    playerData.forEach(function (seed) {
+        Player.create(seed, function (err, player) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(`added ${player}`);
+            }
+        });
+    });
 }
 
 
