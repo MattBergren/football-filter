@@ -862,15 +862,15 @@ function seedDB(){
     //         }
     //     });
     // });
-    playerData.forEach(function (seed) {
-        Player.create(seed, function (err, player) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(`added ${player}`);
-            }
-        });
-    });
+    // playerData.forEach(function (seed) {
+    //     Player.create(seed, function (err, player) {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log(`added ${player}`);
+    //         }
+    //     });
+    // });
 }
 
 

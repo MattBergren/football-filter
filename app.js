@@ -17,7 +17,7 @@ app.use(expressSanitizer());
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 
-seedDB();
+// seedDB();
 
 
 app.get('/', function (req, res) {
@@ -40,7 +40,23 @@ app.get('/', function (req, res) {
 });
 
 app.post('/football', function (req, res) {
-    console.log(req.body.team);
+    Player.find({team_id: req.body.team}, function(err, player){
+        if(err){
+            console.log(err);
+        } else {
+            Team.findById(req.body.team, function(err, teamId){
+                if(err){
+                    console.log(err);
+                } else {
+                    var allData = {
+                        player: player,
+                        team: teamId
+                    };
+                    res.json(allData);
+                }
+            });
+        }
+    });
 });
 
 app.listen(3000, function () {
