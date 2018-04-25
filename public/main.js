@@ -7,14 +7,15 @@ $('#team-select').dropdown({
             data: teamData,
             type: 'POST',
             success: function (data) {
-                $.each( data.player, function( key, value ) {
+                console.log(data);
+                $.each(data , function( key, value ) {
                     $('#team-list').append(`
                         <div class="ui cards animated fadeIn">
                             <div class="card">
                                 <div class="content">
                                     <div class="header">${value.firstName}&nbsp;${value.lastName}</div>
                                     <div class="meta">
-                                        ${data.team.city}
+                                        ${value.team.city}
                                     </div>
                                 </div>
                             </div>

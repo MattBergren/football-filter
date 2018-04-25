@@ -1,14 +1,15 @@
 <% include partials/header %>
-<div class="ui container">
-    <header>
+<header>
         <h1>2017 NFC Leaders</h1>
     </header>
+<div class="ui container">
+    
     <div class="ui stackable grid">
         <div class="five wide column">
             <aside>
                 <div class="ui sub header">Filter by</div>
                 <select class="ui fluid search dropdown" id="team-select" name="teams">
-                <option value="">Teams</option>
+                <option value="all">All teams</option>
                 <% teams.forEach(function(team){ %>
                     <option value="<%=team._id%>"><%=team.city%>&nbsp;<%=team.name%></option> 
                 <% });%>

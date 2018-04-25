@@ -125,10 +125,12 @@ table {
 */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #eee; }
+  background-color: #ebebeb;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png"); }
 
 header {
-  background-color: #003399;
+  background: #0044cc;
+  background: linear-gradient(90deg, #0044cc 0%, #003399 50%, #0044cc 100%);
   min-height: 100px;
   display: flex;
   justify-content: center;
