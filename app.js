@@ -42,30 +42,29 @@ app.get('/', function (req, res) {
 app.post('/football', function (req, res) {
     if (req.body.team == 'all') {
         console.log('all');
-
+        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+            if (err) {
+                console.log(err);
+            } else {
                 Player.find({}).lean().exec(function (err, allPlayers) {
                     if (err) {
                         console.log(err);
                     } else {
-                        allPlayers.forEach(function (playerObj) {
-                            
+                        console.log(allTeams);
+                        allPlayers.forEach(function (playerObj) {  
 
-                            Team.findById(playerObj.team_id, function (err, team) {
-                                if (err) {
-                                    console.log(err);
-                                } else {
-                                    playerObj.team = teamId;
+                            allTeams.forEach(function(teamObj){
+                                if(playerObj.team_id == teamObj._id){
+                                    playerObj.team = teamObj;
                                 }
                             });
-
                             
-
                         });
                         res.json(allPlayers);
                     }
                 });
-
-        
+            }
+        }); 
     } else {
         Player.find({ team_id: req.body.team }).lean().exec(function(err, players){
             if(err){
