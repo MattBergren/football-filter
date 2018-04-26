@@ -41,7 +41,6 @@ app.get('/', function (req, res) {
 
 app.post('/football', function (req, res) {
     if (req.body.team == 'all') {
-        console.log('all');
         Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
             if (err) {
                 console.log(err);
@@ -50,7 +49,6 @@ app.post('/football', function (req, res) {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log(allTeams);
                         allPlayers.forEach(function (playerObj) {  
 
                             allTeams.forEach(function(teamObj){
