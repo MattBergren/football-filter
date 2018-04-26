@@ -1,201 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-// METHOD 1: LINE NUMBERS
-/*
-.container {
-  background-color: #eee;
-  max-width: 1000px;
-  margin: 30px auto;
-  
-  display: grid;
-  grid-template-rows: 100px 200px 400px 100px;
-  grid-template-columns: repeat(3, 1fr) 200px;
-
-  grid-gap: 20px;
-
-  > div {
-    padding: 20px;
-    font-size: 18px;
-    font-family: sans-serif;
-    color: #fff;
-    background-color: orangered;
-  }
-
-  .header {
-    grid-column: 1/-1;
-  }
-
-  .sidebar {
-    grid-column: 4/-1;
-    grid-row: 2/ span 2;
-  }
-
-  .main-content {
-    grid-column: 1/ span 3;
-  }
-
-  .footer {
-    grid-column: 1/-1;
-  }
-
-}
-*/
-
-
-// METHOD 2: LINE NAMES
-/*
-.container {
-  background-color: #eee;
-  max-width: 1000px;
-  margin: 30px auto;
-  
-  display: grid;
-  grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
-  grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end];
-
-  grid-gap: 20px;
-
-  > div {
-    padding: 20px;
-    font-size: 18px;
-    font-family: sans-serif;
-    color: #fff;
-    background-color: orangered;
-  }
-
-  .header {
-    grid-column: col-start 1 / grid-end;
-  }
-
-  .sidebar {
-    grid-column: col-end 3/ grid-end;
-    grid-row: box-start / main-end;
-  }
-
-  .main-content {
-    grid-column: col-start 1 / col-end 3;
-  }
-
-  .footer {
-    grid-column: col-start 1 / grid-end;
-  }
-
-}
-*/
-
-// METHOD 3: NAME GRID AREAS
-
-// .container {
-//   background-color: #eee;
-//   max-width: 1000px;
-//   margin: 30px auto;
-  
-//   display: grid;
-//   grid-template-rows: 100px 200px 400px 100px;
-//   grid-template-columns: repeat(3, 1fr) 200px;
-
-//   grid-gap: 20px;
-
-//   grid-template-areas: "head head head head" 
-//                        "box1 box2 box3 side"
-//                        "main main main side"
-//                        "foot foot foot foot";
-
-//   > div {
-//     padding: 20px;
-//     font-size: 18px;
-//     font-family: sans-serif;
-//     color: #fff;
-//     background-color: orangered;
-//   }
-
-//   .header {
-//     grid-area: head;
-//   }
-
-//   .sidebar {
-//     grid-area: side;
-//   }
-
-//   .main-content {
-//     grid-area: main;
-//   }
-
-//   .footer {
-//     grid-area: foot;
-//   }
-
-//   .box-1 {
-//     grid-area: box1;
-//   }
-//   .box-2 {
-//     grid-area: box2;
-//   }
-//   .box-3 {
-//     grid-area: box3;
-//   }
-
-// }
 
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #ebebeb;
-background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
-
-}
-
-.container {
-  // display: grid;
-  // max-width: 1280px;
-  // margin: 30px auto;
-  // grid-template-rows: repeat(2, minmax(150px, 1fr));
-  // grid-template-columns: 25% 1fr;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 
 header {
@@ -224,6 +31,18 @@ aside {
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
   }
+
+  .ui.sub.header,
+  .ui.form .grouped.fields > label {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+}
+
+#position-filter,
+#probowl-filter {
+  margin-top: 20px;
 }
 
 main {
@@ -233,5 +52,4 @@ main {
 
 footer {
   background-color: #007DC3;
-  // grid-column: 1/-1;
 }

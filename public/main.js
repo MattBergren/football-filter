@@ -1,4 +1,4 @@
-$('#team-select').dropdown({
+$('#team-filter').dropdown({
     onChange: function(value){
         var teamData = {team: value};
         $('.card').removeClass('fadeIn').addClass('animated fadeOut').remove();
@@ -26,3 +26,19 @@ $('#team-select').dropdown({
         
     }
 });
+
+$('.ui.radio.checkbox').checkbox({
+    onChecked: function () {
+        var val = $(this).val();
+        console.log(val);
+        allData = {
+            team: 'all',
+            position: val,
+            proBowl: false
+        }
+    }
+});
+
+function resetCards(){
+
+}

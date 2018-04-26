@@ -40,6 +40,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/football', function (req, res) {
+    console.log(req.body);
     if (req.body.team == 'all') {
         Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
             if (err) {

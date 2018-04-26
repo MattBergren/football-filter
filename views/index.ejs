@@ -7,46 +7,52 @@
     <div class="ui stackable grid">
         <div class="five wide column">
             <aside>
-                <div class="ui sub header">Filter by</div>
-                <select class="ui fluid search dropdown" id="team-select" name="teams">
+                <div class="ui sub header">Team</div>
+                <select class="ui fluid search dropdown" id="team-filter" name="teams">
                 <option value="all">All teams</option>
                 <% teams.forEach(function(team){ %>
                     <option value="<%=team._id%>"><%=team.city%>&nbsp;<%=team.name%></option> 
                 <% });%>
                 </select>
-                <div class="ui form">
+                <div id="position-filter" class="ui form">
                     <div class="grouped fields">
-                      <label>Filter by position</label>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="example2" checked="checked">
-                          <label>Once a week</label>
+                        <label for="position">Position</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="position" checked value="all" tabindex="0" class="hidden">
+                                <label>ALL</label>
+                            </div>
                         </div>
-                      </div>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="example2">
-                          <label>2-3 times a week</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="position" value="QB" tabindex="0" class="hidden">
+                                <label>QB</label>
+                            </div>
                         </div>
-                      </div>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="example2">
-                          <label>Once a day</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="position" value="RB" tabindex="0" class="hidden">
+                                <label>RB</label>
+                            </div>
                         </div>
-                      </div>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="example2">
-                          <label>Twice a day</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="position" value="WR" tabindex="0" class="hidden">
+                                <label>WR</label>
+                            </div>
                         </div>
-                      </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="position" value="TE" tabindex="0" class="hidden">
+                                <label>TE</label>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                <div class="ui toggle checkbox">
-                    <input type="checkbox" name="public">
-                    <label>All Pro</label>
-                  </div>
+                </div>
+                <div id="probowl-filter"class="ui toggle checkbox">
+                    <input type="checkbox" name="proBowl">
+                    <label>PRO BOWL</label>
+                </div>
             </aside>
         </div>
         <div class="eleven wide column">
