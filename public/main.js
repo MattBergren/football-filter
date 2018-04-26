@@ -27,7 +27,7 @@ $('#team-filter').dropdown({
     }
 });
 
-$('.ui.radio.checkbox').checkbox({
+$('#position-filter .ui.radio.checkbox').checkbox({
     onChecked: function () {
         var val = $(this).val();
         console.log(val);
@@ -38,6 +38,15 @@ $('.ui.radio.checkbox').checkbox({
         }
     }
 });
+
+$('#probowl-filter').checkbox({
+    onChecked: function () {
+        console.log('hit');
+        // var status = $(this).isChecked;
+        // console.log(val);
+    }
+});
+
 
 function resetCards(){
 
