@@ -40,32 +40,33 @@ app.get('/', function (req, res) {
 });
 
 app.post('/football', function (req, res) {
-    console.log(req.body);
-    if (req.body.team == 'all') {
-        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
-            if (err) {
-                console.log(err);
-            } else {
-                Player.find({}).lean().exec(function (err, allPlayers) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        allPlayers.forEach(function (playerObj) {  
+    // console.log(req.body);
+    // if (req.body.team == 'all') {
+    //     Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             Player.find({}).lean().exec(function (err, allPlayers) {
+    //                 if (err) {
+    //                     console.log(err);
+    //                 } else {
+    //                     allPlayers.forEach(function (playerObj) {  
 
-                            allTeams.forEach(function(teamObj){
-                                if(playerObj.team_id == teamObj._id){
-                                    playerObj.team = teamObj;
-                                }
-                            });
+    //                         allTeams.forEach(function(teamObj){
+    //                             if(playerObj.team_id == teamObj._id){
+    //                                 playerObj.team = teamObj;
+    //                             }
+    //                         });
                             
-                        });
-                        res.json(allPlayers);
-                    }
-                });
-            }
-        }); 
-    } else {
+    //                     });
+    //                     res.json(allPlayers);
+    //                 }
+    //             });
+    //         }
+    //     }); 
+    // } else {
         Player.find({ team_id: req.body.team }).lean().exec(function(err, players){
+            console.log(req.body);
             if(err){
                 console.log(err);
             } else {
@@ -82,7 +83,7 @@ app.post('/football', function (req, res) {
                 });
             }
         });
-    }
+    // }
 });
 
 app.listen(3000, function () {

@@ -1,10 +1,19 @@
+
 $('#team-filter').dropdown({
     onChange: function(value){
-        var teamData = {team: value};
+        // get value in select
+        var team = value;
+        // lookup value in position radio
+        var position = $('input[name=position]:checked', '#position-filter').val()
+        // build object
+        var allData = {
+            team: team,
+            position: position
+        };
         $('.card').removeClass('fadeIn').addClass('animated fadeOut').remove();
         $.ajax({
             url: '/football',
-            data: teamData,
+            data: allData,
             type: 'POST',
             success: function (data) {
                 console.log(data);
@@ -27,15 +36,20 @@ $('#team-filter').dropdown({
     }
 });
 
-$('#position-filter .ui.radio.checkbox').checkbox({
+$('.ui.radio.checkbox', '#position-filter').checkbox({
     onChecked: function () {
-        var val = $(this).val();
-        console.log(val);
-        allData = {
-            team: 'all',
-            position: val,
-            proBowl: false
-        }
+        // get value of radio
+        var position = $(this).val();
+        // lookup value in select
+        var team = $('#team-filter').val();
+        // build object
+        var allData = {
+            team: team,
+            position: position
+        };
+        // make ajax call
+        console.log(allData);
+        
     }
 });
 
