@@ -710,7 +710,7 @@ var teamData = [
         city: "Philadelphia",
         name: "Eagles",
         primaryColor: "#004C54",
-        seondaryColor: "#A5ACAF",
+        secondaryColor: "#A5ACAF",
         img: "http://content.sportslogos.net/logos/7/167/thumbs/960.gif",
         conference: "NFC"
     },
@@ -719,7 +719,7 @@ var teamData = [
         city: "Dallas",
         name: "Cowboys",
         primaryColor: "#041E42",
-        seondaryColor: "#869397",
+        secondaryColor: "#869397",
         img: "http://content.sportslogos.net/logos/7/165/thumbs/406.gif",
         conference: "NFC"
     },
@@ -728,7 +728,7 @@ var teamData = [
         city: "New York",
         name: "Giants",
         primaryColor: "#0B2265",
-        seondaryColor: "#A71930",
+        secondaryColor: "#A71930",
         img: "http://content.sportslogos.net/logos/7/166/thumbs/919.gif",
         conference: "NFC"
     },
@@ -737,7 +737,7 @@ var teamData = [
         city: "Washington",
         name: "Redskins",
         primaryColor: "#651D32",
-        seondaryColor: "#FFB81C",
+        secondaryColor: "#FFB81C",
         img: "http://content.sportslogos.net/logos/7/168/thumbs/im5xz2q9bjbg44xep08bf5czq.gif",
         conference: "NFC"
     },
@@ -746,7 +746,7 @@ var teamData = [
         city: "Minnesota",
         name: "Vikings",
         primaryColor: "#4F2683",
-        seondaryColor: "#FFC62F",
+        secondaryColor: "#FFC62F",
         img: "http://content.sportslogos.net/logos/7/172/thumbs/17227042013.gif",
         conference: "NFC"
     },
@@ -755,7 +755,7 @@ var teamData = [
         city: "Detriot",
         name: "Lions",
         primaryColor: "#0069B1",
-        seondaryColor: "#A2AAAD",
+        secondaryColor: "#A2AAAD",
         img: "http://content.sportslogos.net/logos/7/170/thumbs/17013982017.gif",
         conference: "NFC"
     },
@@ -764,7 +764,7 @@ var teamData = [
         city: "Green Bay",
         name: "Packers",
         primaryColor: "#183028",
-        seondaryColor: "#FFB81C",
+        secondaryColor: "#FFB81C",
         img: "http://content.sportslogos.net/logos/7/171/thumbs/dcy03myfhffbki5d7il3.gif",
         conference: "NFC"
     },
@@ -773,7 +773,7 @@ var teamData = [
         city: "Chicago",
         name: "Bears",
         primaryColor: "#0B162A",
-        seondaryColor: "#C83803",
+        secondaryColor: "#C83803",
         img: "http://content.sportslogos.net/logos/7/169/thumbs/364.gif",
         conference: "NFC"
     },
@@ -782,7 +782,7 @@ var teamData = [
         city: "Carolina",
         name: "Panthers",
         primaryColor: "#0085CA",
-        seondaryColor: "#101820",
+        secondaryColor: "#101820",
         img: "http://content.sportslogos.net/logos/7/174/thumbs/f1wggq2k8ql88fe33jzhw641u.gif",
         conference: "NFC"
     },
@@ -791,7 +791,7 @@ var teamData = [
         city: "Atlanta",
         name: "Falcons",
         primaryColor: "#A6192E",
-        seondaryColor: "#101820",
+        secondaryColor: "#101820",
         img: "http://content.sportslogos.net/logos/7/173/thumbs/299.gif",
         conference: "NFC"
     },
@@ -800,7 +800,7 @@ var teamData = [
         city: "Tampa Bay",
         name: "Buccaneers",
         primaryColor: "#C8102E",
-        seondaryColor: "#3D3935",
+        secondaryColor: "#3D3935",
         img: "http://content.sportslogos.net/logos/7/176/thumbs/17636702014.gif",
         conference: "NFC"
     },
@@ -809,7 +809,7 @@ var teamData = [
         city: "New Orleans",
         name: "Saints",
         primaryColor: "#D3BC8D",
-        seondaryColor: "#101820",
+        secondaryColor: "#101820",
         img: "http://content.sportslogos.net/logos/7/175/thumbs/907.gif",
         conference: "NFC"
     },
@@ -818,7 +818,7 @@ var teamData = [
         city: "Los Angeles",
         name: "Rams",
         primaryColor: "#041E42",
-        seondaryColor: "#866D4B",
+        secondaryColor: "#866D4B",
         img: "http://content.sportslogos.net/logos/7/5941/thumbs/594179532017.gif",
         conference: "NFC"
     },
@@ -827,7 +827,7 @@ var teamData = [
         city: "Seattle",
         name: "Seahawks",
         primaryColor: "#0C2340",
-        seondaryColor: "#78BE20",
+        secondaryColor: "#78BE20",
         img: "http://content.sportslogos.net/logos/7/180/thumbs/pfiobtreaq7j0pzvadktsc6jv.gif",
         conference: "NFC"
     },
@@ -836,7 +836,7 @@ var teamData = [
         city: "Arizona",
         name: "Cardinals",
         primaryColor: "#9B2743",
-        seondaryColor: "#000000",
+        secondaryColor: "#000000",
         img: "http://content.sportslogos.net/logos/7/177/thumbs/kwth8f1cfa2sch5xhjjfaof90.gif",
         conference: "NFC"
     },
@@ -845,7 +845,7 @@ var teamData = [
         city: "San Francisco",
         name: "49ers",
         primaryColor: "#A6192E",
-        seondaryColor: "#85714D",
+        secondaryColor: "#85714D",
         img: "http://content.sportslogos.net/logos/7/179/thumbs/17994552009.gif",
         conference: "NFC"
     }

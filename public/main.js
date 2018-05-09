@@ -25,15 +25,9 @@ $('#team-filter').dropdown({
             type: 'POST',
             success: function (data) {
                 $.each(data , function( key, value ) {
-                    $('#team-list .ui.cards').append(`
-                        <div class="card animated fadeIn">
-                            <div class="content">
-                                <div class="header">${value.firstName}&nbsp;${value.lastName}</div>
-                                <div class="meta">
-                                    ${value.team.city}
-                                </div>
-                            </div>
-                        </div>
+                    $('#team-list').append(`
+                        <div class="player-card" style="border-top: 15px solid ${value.team.primaryColor}; border-bottom: 15px solid ${value.team.primaryColor}">
+                        
                     `);
                 });
 
@@ -130,5 +124,5 @@ $('#probowl-filter').checkbox({
 
 
 function removeCards(){
-    $('.card').removeClass('fadeIn').addClass('animated fadeOut').remove();
+    $('.player-card').removeClass('fadeIn').addClass('animated fadeOut').remove();
 }

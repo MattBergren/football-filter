@@ -34,5 +34,94 @@ aside {
 main {
   padding-top: 20px; }
 
-footer {
-  background-color: #007DC3; }
+#team-list {
+  display: flex;
+  flex-wrap: wrap; }
+
+.player-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-basis: 49%;
+  background-color: #fff;
+  min-height: 150px;
+  margin-bottom: 20px; }
+  .player-card:nth-of-type(odd) {
+    margin-right: 2%; }
+  .player-card-header {
+    height: 50px; }
+  .player-card-footer {
+    height: 20px; }
+  .phi .player-card-header, .phi .player-card-footer {
+    background-color: #004C54; }
+  .dal .player-card-header, .dal .player-card-footer {
+    background-color: #041E42; }
+  .nyg .player-card-header, .nyg .player-card-footer {
+    background-color: #0B2265; }
+  .was .player-card-header, .was .player-card-footer {
+    background-color: #651D32; }
+  .min .player-card-header, .min .player-card-footer {
+    background-color: #4F2683; }
+  .det .player-card-header, .det .player-card-footer {
+    background-color: #0069B1; }
+  .gb .player-card-header, .gb .player-card-footer {
+    background-color: #183028; }
+  .chi .player-card-header, .chi .player-card-footer {
+    background-color: #0B162A; }
+  .atl .player-card-header, .atl .player-card-footer {
+    background-color: #A6192E; }
+  .car .player-card-header, .car .player-card-footer {
+    background-color: #0085CA; }
+  .tb .player-card-header, .tb .player-card-footer {
+    background-color: #C8102E; }
+  .nor .player-card-header, .nor .player-card-footer {
+    background-color: #D3BC8D; }
+  .sea .player-card-header, .sea .player-card-footer {
+    background-color: #0C2340; }
+  .arz .player-card-header, .arz .player-card-footer {
+    background-color: #9B2743; }
+  .lar .player-card-header, .lar .player-card-footer {
+    background-color: #041E42; }
+  .sf .player-card-header, .sf .player-card-footer {
+    background-color: #A6192E; }
+  .player-card-stripe {
+    height: 20px; }
+    .phi .player-card-stripe {
+      background-color: #A5ACAF; }
+    .dal .player-card-stripe {
+      background-color: #869397; }
+    .nyg .player-card-stripe {
+      background-color: #A71930; }
+    .was .player-card-stripe {
+      background-color: #FFB81C; }
+    .min .player-card-stripe {
+      background-color: #FFC62F; }
+    .det .player-card-stripe {
+      background-color: #A2AAAD; }
+    .gb .player-card-stripe {
+      background-color: #FFB81C; }
+    .chi .player-card-stripe {
+      background-color: #C83803; }
+    .atl .player-card-stripe {
+      background-color: #101820; }
+    .car .player-card-stripe {
+      background-color: #101820; }
+    .tb .player-card-stripe {
+      background-color: #3D3935; }
+    .nor .player-card-stripe {
+      background-color: #101820; }
+    .sea .player-card-stripe {
+      background-color: #78BE20; }
+    .arz .player-card-stripe {
+      background-color: #000000; }
+    .lar .player-card-stripe {
+      background-color: #866D4B; }
+    .sf .player-card-stripe {
+      background-color: #85714D; }
+  .player-card-image {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    top: 10px;
+    left: 10px; }

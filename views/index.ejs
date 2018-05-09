@@ -57,21 +57,27 @@
         </div>
         <div class="eleven wide column">
             <main id="team-list">
-                <div class="ui cards">
-                    <% players.forEach(function(player){ %>
-                    <div class="card">
-                        <div class="content">
-                            <div class="header"><%=player.firstName%>&nbsp;<%=player.lastName%></div>
-                            <div class="meta">
-                                <% teams.forEach(function(team){ %>
-                                    <% if(team._id === player.team_id) { %>
-                                        <%=team.name%>
-                                    <% } %>
-                                <% });%>
+                <% players.forEach(function(player){ %>
+                    <% teams.forEach(function(team){ %>
+                        <% if(team._id === player.team_id) { %>
+                            <div class="player-card <%=player.team_id%>">
+                                <div class="player-card-header">
+
+                                </div>
+                                <div class="player-card-stripe">
+
+                                </div>
+                                <div class="player-card-body">
+                                    <img class="player-card-image" src="<%=player.image%>" alt="">
+                                </div>
+                                
+                                <div class="player-card-footer">
+
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        <% } %>
                     <% });%>
+                <% });%>
                 </div>
             </main>
         </div>
