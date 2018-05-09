@@ -73,10 +73,31 @@ main {
 
   &-header {
     height: 50px;
+    display: flex;
+    align-items: center;
+
+    h2 {
+      color: #fff;
+      margin-left: 120px;
+      font-size: 22px;
+    }
+
+    small {
+      font-size: 70%;
+    }
+
   }
   &-footer {
-    height: 20px;
+    height: 25px;
     margin-top:auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    h3 {
+      color: #fff;
+      font-size: 12px;
+      margin-right: 10px;
+    }
   }
 
   &-header,

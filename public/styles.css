@@ -49,10 +49,25 @@ main {
   .player-card:nth-of-type(odd) {
     margin-right: 2%; }
   .player-card-header {
-    height: 50px; }
+    height: 50px;
+    display: flex;
+    align-items: center; }
+    .player-card-header h2 {
+      color: #fff;
+      margin-left: 120px;
+      font-size: 22px; }
+    .player-card-header small {
+      font-size: 70%; }
   .player-card-footer {
-    height: 20px;
-    margin-top: auto; }
+    height: 25px;
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .player-card-footer h3 {
+      color: #fff;
+      font-size: 12px;
+      margin-right: 10px; }
   .phi .player-card-header, .phi .player-card-footer {
     background-color: #004C54; }
   .dal .player-card-header, .dal .player-card-footer {
