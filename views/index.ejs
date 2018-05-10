@@ -67,6 +67,28 @@
                                 <div class="player-card-stripe"></div>
                                 <div class="player-card-body">
                                     <img class="player-card-image" src="<%=player.image%>" alt="player photo">
+                                    <div class="logos">
+
+                                    </div>
+                                    <div class="yards">
+                                        <div class="stat-block">
+                                            <h4 class="stat-block-label">
+                                            <% if(player.position === 'QB') { %>
+                                                Passing Yards
+                                            <% } else if(player.position === 'RB') { %>
+                                                Rushing Yards
+                                            <% } %>
+                                            
+                                            </h4>
+                                            <h5 class="stat-block-data">3029</h5>
+                                        </div>
+                                    </div>
+                                    <div class="tds">
+                                        <div class="stat-block">
+                                            <h4 class="stat-block-label">Passing TD's</h4>
+                                            <h5 class="stat-block-data">12</h5>
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                 <div class="player-card-footer">

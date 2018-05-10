@@ -87,6 +87,34 @@ main {
     }
 
   }
+
+  &-body {
+    display: flex;
+
+    .logos {
+      position: relative;
+      height: 100px;
+      flex: 1;
+    }
+
+    .yards {
+      height: 100px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .tds {
+      height: 100px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
   &-footer {
     height: 25px;
     margin-top:auto;
@@ -158,6 +186,25 @@ main {
     left: 10px;
   }
 
+  &-pb {
+    width: 50px;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+  }
 
+  .stat-block {
+    text-align: center;
+  }
+
+  .stat-block-label {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .stat-block-data {
+    margin: 0;
+    font-size: 36px;
+  }
 
 }

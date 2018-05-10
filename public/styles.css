@@ -58,6 +58,24 @@ main {
       font-size: 22px; }
     .player-card-header small {
       font-size: 70%; }
+  .player-card-body {
+    display: flex; }
+    .player-card-body .logos {
+      position: relative;
+      height: 100px;
+      flex: 1; }
+    .player-card-body .yards {
+      height: 100px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .player-card-body .tds {
+      height: 100px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   .player-card-footer {
     height: 25px;
     margin-top: auto;
@@ -141,3 +159,16 @@ main {
     background-color: #fff;
     top: 10px;
     left: 10px; }
+  .player-card-pb {
+    width: 50px;
+    position: absolute;
+    left: 10px;
+    bottom: 5px; }
+  .player-card .stat-block {
+    text-align: center; }
+  .player-card .stat-block-label {
+    margin: 0;
+    font-size: 12px; }
+  .player-card .stat-block-data {
+    margin: 0;
+    font-size: 36px; }
