@@ -9,7 +9,8 @@ header {
   min-height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 30px; }
   header h1 {
     font-family: 'Roboto Slab', serif;
     color: #fff;
@@ -17,11 +18,14 @@ header {
     font-weight: 700; }
 
 aside {
-  padding-top: 20px; }
+  background-color: #ccc;
+  border: 1px solid #bbb;
+  padding: 30px; }
   aside h2 {
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Roboto Slab', serif;
-    font-weight: 400; }
+    font-weight: 700;
+    text-transform: uppercase; }
   aside .ui.sub.header,
   aside .ui.form .grouped.fields > label {
     font-size: 13px;
@@ -31,9 +35,6 @@ aside {
 #probowl-filter {
   margin-top: 20px; }
 
-main {
-  padding-top: 20px; }
-
 #team-list {
   display: flex;
   flex-wrap: wrap; }
@@ -42,12 +43,12 @@ main {
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-  flex-basis: 49%;
+  flex-basis: 48%;
   background-color: #fff;
   min-height: 150px;
-  margin-bottom: 20px; }
+  margin-bottom: 28px; }
   .player-card:nth-of-type(odd) {
-    margin-right: 2%; }
+    margin-right: 3.5%; }
   .player-card-header {
     height: 50px;
     display: flex;
@@ -61,9 +62,8 @@ main {
   .player-card-body {
     display: flex; }
     .player-card-body .logos {
-      position: relative;
-      height: 100px;
-      flex: 1; }
+      flex: 1;
+      position: relative; }
     .player-card-body .yards {
       height: 100px;
       flex: 1;
@@ -80,12 +80,11 @@ main {
     height: 25px;
     margin-top: auto;
     display: flex;
-    justify-content: flex-end;
     align-items: center; }
     .player-card-footer h3 {
       color: #fff;
       font-size: 12px;
-      margin-right: 10px; }
+      margin-left: 10px; }
   .phi .player-card-header, .phi .player-card-footer {
     background-color: #004C54; }
   .dal .player-card-header, .dal .player-card-footer {
@@ -158,12 +157,13 @@ main {
     width: 100px;
     background-color: #fff;
     top: 10px;
-    left: 10px; }
-  .player-card-pb {
+    left: 10px;
+    z-index: 100; }
+  .player-card-team {
     width: 50px;
     position: absolute;
-    left: 10px;
-    bottom: 5px; }
+    bottom: 5px;
+    left: 10px; }
   .player-card .stat-block {
     text-align: center; }
   .player-card .stat-block-label {

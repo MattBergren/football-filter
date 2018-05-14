@@ -7,6 +7,7 @@
     <div class="ui stackable grid">
         <div class="five wide column">
             <aside>
+                <h2>Filter by:</h2>
                 <div class="ui sub header">Team</div>
                 <select class="ui fluid search dropdown" id="team-filter" name="teams">
                 <option value="all">All teams</option>
@@ -57,8 +58,8 @@
         </div>
         <div class="eleven wide column">
             <main id="team-list">
-                <% players.forEach(function(player){ %>
-                    <% teams.forEach(function(team){ %>
+                <% teams.forEach(function(team){ %>
+                    <% players.forEach(function(player){ %>
                         <% if(team._id === player.team_id) { %>
                             <div class="player-card <%=player.team_id%>">
                                 <div class="player-card-header">
@@ -68,7 +69,7 @@
                                 <div class="player-card-body">
                                     <img class="player-card-image" src="<%=player.image%>" alt="player photo">
                                     <div class="logos">
-
+                                        <img class="player-card-team" src="<%=team.img%>" alt="team photo">
                                     </div>
                                     <div class="yards">
                                         <div class="stat-block">
@@ -77,16 +78,42 @@
                                                 Passing Yards
                                             <% } else if(player.position === 'RB') { %>
                                                 Rushing Yards
+                                            <% } else { %>
+                                                Recieving Yards
                                             <% } %>
-                                            
                                             </h4>
-                                            <h5 class="stat-block-data">3029</h5>
+                                            <h5 class="stat-block-data">
+                                                <% if(player.position === 'QB') { %>
+                                                    <%= player.passYds.toLocaleString() %>
+                                                <% } else if(player.position === 'RB') { %>
+                                                    <%= player.rushYds.toLocaleString() %>
+                                                <% } else { %>
+                                                    <%= player.recYds.toLocaleString() %>
+                                                <% } %>
+                                            </h5>
                                         </div>
                                     </div>
                                     <div class="tds">
                                         <div class="stat-block">
-                                            <h4 class="stat-block-label">Passing TD's</h4>
-                                            <h5 class="stat-block-data">12</h5>
+                                            <h4 class="stat-block-label">
+                                                <% if(player.position === 'QB') { %>
+                                                    Passing TD's
+                                                <% } else if(player.position === 'RB') { %>
+                                                    Rushing TD's
+                                                <% } else { %>
+                                                    Recieving TD's
+                                                <% } %>
+                                            </h4>
+                                            <h5 class="stat-block-data">
+                                                <% if(player.position === 'QB') { %>
+                                                    <%= player.passTds.toLocaleString() %>
+                                                <% } else if(player.position === 'RB') { %>
+                                                    <%= player.rushTds.toLocaleString() %>
+                                                <% } else { %>
+                                                    <%= player.recTds.toLocaleString() %>
+                                                <% } %>
+
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
