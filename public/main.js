@@ -24,13 +24,8 @@ $('#team-filter').dropdown({
             data: allData,
             type: 'POST',
             success: function (data) {
-                $.each(data , function( key, value ) {
-                    $('#team-list').append(`
-                        <div class="player-card" style="border-top: 15px solid ${value.team.primaryColor}; border-bottom: 15px solid ${value.team.primaryColor}">
-                        
-                    `);
-                });
-
+                var res = nunjucks.render('player-card.njk', {items:data});
+                $('#team-list').html(res);
             }
         });
         
