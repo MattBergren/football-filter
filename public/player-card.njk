@@ -3,5 +3,34 @@
     <div class="player-card-header">
         <h2>{{item.firstName}}&nbsp;{{item.lastName}}<small>&nbsp;&mdash;&nbsp;{{item.position}}</small></h2>
     </div>
+    <div class="player-card-stripe"></div>
+    <div class="player-card-body">
+        <img class="player-card-image" src="img/players/{{item.firstName | lower}}{{item.lastName  | lower}}.png" alt="player photo">
+        <div class="logos">
+            <img class="player-card-team" src="img/teams/{{item.team._id}}.gif" alt="team photo">
+        </div>
+        <div class="yards">
+            <div class="stat-block">
+                <h4 class="stat-block-label">
+                    {% if item.position == 'QB' %}
+                    Passing Yards
+                    {% elif item.position == 'RB' %}
+                    Rushing Yards
+                    {% else %}
+                    Recieving Yards
+                    {% endif %}
+                </h4>
+                <h5 class="stat-block-data">
+                    {% if item.position == 'QB' %}
+                    {{ item.passYds.toLocaleString()}}
+                    {% elif item.position == 'RB' %}
+                    {{ item.rushYds.toLocaleString() }}
+                    {% else %}
+                    {{ item.recYds.toLocaleString() }}
+                    {% endif %}
+                </h5>
+            </div>
+        </div>
+    </div>
 </div>
 {% endfor %}
