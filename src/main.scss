@@ -5,8 +5,7 @@ body {
 }
 
 header {
-  background: rgb(0,68,204);
-  background: linear-gradient(90deg, rgba(0,68,204,1) 0%, rgba(0,51,153,1) 50%, rgba(0,68,204,1) 100%);
+  background-color: rgb(1, 51, 105);
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -16,7 +15,10 @@ header {
   h1 {
     font-family: 'Roboto Slab', serif;
     color: #fff;
-    font-size: 48px;
+    font-size: 32px;
+    @media only screen and (min-width: 992px) {
+      font-size: 48px;
+    }
     font-weight: 700;
   }
 
@@ -47,24 +49,41 @@ aside {
 }
 
 #team-list {
+  @media only screen and (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.no-match {
+  background-color: rgb(1, 51, 105);
+  color: #fff;
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+  }
+  min-height: 100px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 24px;
+    @media only screen and (min-width: 992px) {
+      font-size: 32px;
+    }
+    font-family: 'Roboto Slab', serif;
+  }
 }
 
 .player-card {
-  display: flex;
-  flex-flow: column nowrap;
   position: relative;
   flex-basis: 48%;
   background-color: #fff;
-  min-height: 150px;
   margin-bottom: 28px;
 
-
-
-
   &:nth-of-type(odd){
-    margin-right: 3.5%;
+    @media only screen and (min-width: 992px) {
+      margin-right: 3.5%;
+    }
   }
 
   &-header {
@@ -76,6 +95,9 @@ aside {
       color: #fff;
       margin-left: 120px;
       font-size: 22px;
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        font-size: 16px;
+      }
     }
 
     small {
@@ -95,6 +117,10 @@ aside {
     .yards {
       height: 100px;
       flex: 1;
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        flex:none;
+        margin-right: 10px;
+      }
       display: flex;
       align-items: center;
       justify-content: center;
@@ -103,6 +129,10 @@ aside {
     .tds {
       height: 100px;
       flex: 1;
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        flex:none;
+        margin-right: 10px;
+      }
       display: flex;
       align-items: center;
       justify-content: center;

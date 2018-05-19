@@ -4,8 +4,7 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png"); }
 
 header {
-  background: #0044cc;
-  background: linear-gradient(90deg, #0044cc 0%, #003399 50%, #0044cc 100%);
+  background-color: #013369;
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -14,8 +13,11 @@ header {
   header h1 {
     font-family: 'Roboto Slab', serif;
     color: #fff;
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 700; }
+    @media only screen and (min-width: 992px) {
+      header h1 {
+        font-size: 48px; } }
 
 aside {
   background-color: #ccc;
@@ -35,20 +37,36 @@ aside {
 #probowl-filter {
   margin-top: 20px; }
 
-#team-list {
+@media only screen and (min-width: 992px) {
+  #team-list {
+    display: flex;
+    flex-wrap: wrap; } }
+
+.no-match {
+  background-color: #013369;
+  color: #fff;
+  min-height: 100px;
   display: flex;
-  flex-wrap: wrap; }
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (min-width: 992px) {
+    .no-match {
+      width: 50%; } }
+  .no-match h2 {
+    font-size: 24px;
+    font-family: 'Roboto Slab', serif; }
+    @media only screen and (min-width: 992px) {
+      .no-match h2 {
+        font-size: 32px; } }
 
 .player-card {
-  display: flex;
-  flex-flow: column nowrap;
   position: relative;
   flex-basis: 48%;
   background-color: #fff;
-  min-height: 150px;
   margin-bottom: 28px; }
-  .player-card:nth-of-type(odd) {
-    margin-right: 3.5%; }
+  @media only screen and (min-width: 992px) {
+    .player-card:nth-of-type(odd) {
+      margin-right: 3.5%; } }
   .player-card-header {
     height: 50px;
     display: flex;
@@ -57,6 +75,9 @@ aside {
       color: #fff;
       margin-left: 120px;
       font-size: 22px; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .player-card-header h2 {
+          font-size: 16px; } }
     .player-card-header small {
       font-size: 70%; }
   .player-card-body {
@@ -70,12 +91,20 @@ aside {
       display: flex;
       align-items: center;
       justify-content: center; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .player-card-body .yards {
+          flex: none;
+          margin-right: 10px; } }
     .player-card-body .tds {
       height: 100px;
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .player-card-body .tds {
+          flex: none;
+          margin-right: 10px; } }
   .player-card-footer {
     height: 25px;
     margin-top: auto;

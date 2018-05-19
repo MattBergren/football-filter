@@ -24,8 +24,7 @@
                 data: allData,
                 type: 'POST',
                 success: function (data) {
-                    var res = nunjucks.render('player-card.njk', {items:data});
-                    $('#team-list').html(res);
+                    getTemplate(data);
                 }
             });
             
@@ -57,8 +56,7 @@
                 data: allData,
                 type: 'POST',
                 success: function (data) {
-                    var res = nunjucks.render('player-card.njk', {items:data});
-                    $('#team-list').html(res);
+                    getTemplate(data);
                 }
             });
             
@@ -88,8 +86,7 @@
                 data: allData,
                 type: 'POST',
                 success: function (data) {
-                    var res = nunjucks.render('player-card.njk', {items:data});
-                    $('#team-list').html(res);
+                    getTemplate(data);
                 }
             });
         }
@@ -97,6 +94,16 @@
 
     function removeCards(){
         $('.player-card').removeClass('fadeIn').addClass('animated fadeOut').remove();
+    }
+
+    function getTemplate(data) {
+        if (data.length > 0) {
+            var res = nunjucks.render('player-card.njk', {items:data});
+            $('#team-list').html(res);
+        } else {
+            var res = nunjucks.render('no-match.njk');
+            $('#team-list').html(res);
+        }
     }
 
 })();
