@@ -33,6 +33,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
+app.get('/getData', function (req, res) {
+  Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+      if(err) {
+          console.log(err);
+      } else {
+          Player.find({}, function (err, allPlayers) {
+              if (err) {
+                  console.log(err);
+              } else {
+                  res.json({ teams: allTeams, players: allPlayers });
+              }
+          });
+      }
+  });
+});
+
 // // this is our get method
 // // this method fetches all available data in our database
 // router.get("/getData", (req, res) => {
