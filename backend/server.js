@@ -7,12 +7,13 @@ const logger = require("morgan");
 const Player = require('./models/player');
 const Team = require('./models/team');
 
-const API_PORT = 3001;
+const API_PORT = 3000;
 const app = express();
 // const router = express.Router();
 
 // MongoDB database
-const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(

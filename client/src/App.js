@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './App.css';
 import axios from "axios";
 import CardList from './components/CardList';
 
@@ -14,7 +15,7 @@ class App extends Component {
   }
 
   getDataFromDb = () => {
-    fetch("http://localhost:3001/getData")
+    fetch("http://localhost:3000/getData")
       .then(resp => resp.json())
       .then(data => this.setState({ data: data }));
   };
@@ -35,6 +36,18 @@ class App extends Component {
   
     return (
 
+      <div className="ui container">
+        <div className="ui stackable grid">
+          <div className="five wide column">
+            <aside>
+              <h2>Filter by:</h2>
+              <div className="ui sub header">Team</div>
+              {this.renderContent()}
+            </aside> 
+          </div>
+        </div>
+      </div>
+
 
       // <ul>
       //     {data.length <= 0
@@ -48,7 +61,7 @@ class App extends Component {
       //         ))}
       //   </ul>
       
-      <div>{this.renderContent()}</div>
+      
       // <CardList teams={this.state.data.teams}  />
     );
 
