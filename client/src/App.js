@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './App.css';
 import axios from "axios";
-import CardList from './components/CardList';
 
 class App extends Component {
   
@@ -15,14 +14,14 @@ class App extends Component {
   }
 
   getDataFromDb = () => {
-    fetch("http://localhost:3000/getData")
+    fetch("/api")
       .then(resp => resp.json())
       .then(data => this.setState({ data: data }));
   };
 
   renderContent() {
     if(this.state.data === undefined || this.state.data.length === 0){
-      return <p>Loading content ...</p>
+      return <p>Loading contents ...</p>
     } else {
       console.log(this.state.data);
       const teams = this.state.data.teams.map((team) => {

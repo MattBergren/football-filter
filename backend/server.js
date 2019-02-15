@@ -7,7 +7,7 @@ const logger = require("morgan");
 const Player = require('./models/player');
 const Team = require('./models/team');
 
-const API_PORT = 3000;
+const API_PORT = 3001;
 const app = express();
 // const router = express.Router();
 
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-app.get('/getData', function (req, res) {
+app.get('/api', function (req, res) {
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
           console.log(err);
