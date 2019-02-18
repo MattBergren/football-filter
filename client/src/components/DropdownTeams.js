@@ -12,6 +12,10 @@ class DropdownTeams extends Component {
         this.getDataFromDb();
     }
 
+    handleChange = (event, {value}) => {
+        this.props.onTeamSelect(value);
+    }
+
     getDataFromDb = () => {
         fetch("/api/allTeams")
           .then(resp => resp.json())
@@ -19,15 +23,25 @@ class DropdownTeams extends Component {
             const teamList = data.teams.map(team => {
                 return { key: team._id, value: team._id, text: team.city }
             });
+            teamList.unshift({ key: 'all', value: 'all', text: 'All teams'});
             this.setState({ teamOptions: teamList })
           });
     };
 
     renderContent() {
+        const { value } = this.state;
+
         if(this.state.teamOptions === undefined || this.state.teamOptions.length === 0){
             return <Spinner />
         } else {
-            return <Dropdown placeholder='All teams' search selection options={this.state.teamOptions} />
+            return <Dropdown 
+                placeholder='All teams' 
+                search 
+                selection 
+                options={this.state.teamOptions} 
+                onChange={this.handleChange}
+                value={value}
+                />
         }
     }
 

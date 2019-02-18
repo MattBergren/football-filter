@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form, Checkbox } from 'semantic-ui-react';
 import './App.css';
 import axios from "axios";
 import DropdownTeams from './components/DropdownTeams';
@@ -7,15 +8,21 @@ class App extends Component {
   
   // initialize our state 
   state = {
-    data: []
+    team: 'all',
+    position: 'all',
+    proBowl: false
   };
 
   componentDidMount() {
     
   }
 
+  onTeamSelect = (team) => {
+    this.setState({ team });
+  }
+
   render() {
-  
+    console.log('render called');
     return (
 
       <div className="ui container">
@@ -24,7 +31,7 @@ class App extends Component {
             <aside>
               <h2>Filter by:</h2>
               <div className="ui sub header">Team</div>
-                <DropdownTeams />
+                <DropdownTeams onTeamSelect={this.onTeamSelect} />
             </aside> 
           </div>
         </div>
