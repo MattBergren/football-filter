@@ -12,8 +12,8 @@ const app = express();
 // const router = express.Router();
 
 // MongoDB database
-// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
-const dbRoute = "mongodb://localhost/football-filter";
+const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+// const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(
@@ -34,18 +34,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-app.get('/api', function (req, res) {
+app.get('/api/allTeams', function (req, res) {
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
-          console.log(err);
+            console.log(err);
       } else {
-          Player.find({}, function (err, allPlayers) {
-              if (err) {
-                  console.log(err);
-              } else {
-                  res.json({ teams: allTeams, players: allPlayers });
-              }
-          });
+            res.json({ teams: allTeams });
       }
   });
 });

@@ -32,6 +32,11 @@ body {
     aside .ui.form .grouped.fields > label {
       font-size: 13px;
       text-transform: uppercase; }
+
+
+      .ui.selection.dropdown {
+        width: 100%;
+      }
   
   #position-filter,
   #probowl-filter {
