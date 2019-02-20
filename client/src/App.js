@@ -3,6 +3,8 @@ import { Form, Checkbox } from 'semantic-ui-react';
 import './App.css';
 import axios from "axios";
 import DropdownTeams from './components/DropdownTeams';
+import RadioPositions from './components/RadioPositions';
+import TogglePro from './components/TogglePro';
 
 class App extends Component {
   
@@ -21,6 +23,14 @@ class App extends Component {
     this.setState({ team });
   }
 
+  onPositionSelect = (position) => {
+    this.setState({ position });
+  }
+
+  onProToggle = (proBowl) => {
+    this.setState({ proBowl });
+  }
+
   render() {
     console.log('render called');
     return (
@@ -31,7 +41,10 @@ class App extends Component {
             <aside>
               <h2>Filter by:</h2>
               <div className="ui sub header">Team</div>
-                <DropdownTeams onTeamSelect={this.onTeamSelect} />
+              <DropdownTeams onTeamSelect={this.onTeamSelect} />
+              <div className="ui sub header">Position</div>
+              <RadioPositions onPositionSelect={this.onPositionSelect}/>
+              <TogglePro onProToggle={this.onProToggle} />
             </aside> 
           </div>
         </div>

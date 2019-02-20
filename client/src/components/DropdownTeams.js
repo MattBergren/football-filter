@@ -24,7 +24,7 @@ class DropdownTeams extends Component {
                 return { key: team._id, value: team._id, text: team.city }
             });
             teamList.unshift({ key: 'all', value: 'all', text: 'All teams'});
-            this.setState({ teamOptions: teamList })
+            this.setState({ teamOptions: teamList });
           });
     };
 

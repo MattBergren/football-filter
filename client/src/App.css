@@ -1,47 +1,65 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ebebeb;
-    background-image: url("https://www.transparenttextures.com/patterns/absurdity.png"); }
+  font-family: 'Roboto', sans-serif;
+  background-color: #ebebeb;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png"); 
+}
   
-  header {
-    background-color: #013369;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px; }
-    header h1 {
-      font-family: 'Roboto Slab', serif;
-      color: #fff;
-      font-size: 32px;
-      font-weight: 700; }
-      @media only screen and (min-width: 992px) {
-        header h1 {
-          font-size: 48px; } }
+header {
+  background-color: #013369;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+}
+
+header h1 {
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700; 
+}
+
+@media only screen and (min-width: 992px) {
+  header h1 {
+    font-size: 48px; 
+  } 
+}
   
-  aside {
-    background-color: #ccc;
-    border: 1px solid #bbb;
-    padding: 30px; }
-    aside h2 {
-      font-size: 20px;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 700;
-      text-transform: uppercase; }
-    aside .ui.sub.header,
-    aside .ui.form .grouped.fields > label {
-      font-size: 13px;
-      text-transform: uppercase; }
+aside {
+  background-color: #ccc;
+  border: 1px solid #bbb;
+  padding: 30px; 
+}
+
+.ui.header {
+  font-family: 'Roboto', sans-serif;
+}
+
+aside h2 {
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase; 
+}
+
+.ui.selection.dropdown {
+  width: 100%;
+  min-width: initial;
+}
+
+#position-filter .field {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+  
+#position-filter,
+#probowl-filter {
+  margin-top: 20px; 
+}
 
 
-      .ui.selection.dropdown {
-        width: 100%;
-      }
-  
-  #position-filter,
-  #probowl-filter {
-    margin-top: 20px; }
-  
   @media only screen and (min-width: 992px) {
     #team-list {
       display: flex;
@@ -64,7 +82,7 @@ body {
         .no-match h2 {
           font-size: 32px; } }
   
-  .player-card {
+  /* .player-card {
     position: relative;
     flex-basis: 48%;
     background-color: #fff;
@@ -205,4 +223,4 @@ body {
       font-size: 12px; }
     .player-card .stat-block-data {
       margin: 0;
-      font-size: 36px; }
+      font-size: 36px; } */
