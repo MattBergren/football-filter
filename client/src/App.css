@@ -59,30 +59,40 @@ aside h2 {
   margin-top: 20px; 
 }
 
-
-  @media only screen and (min-width: 992px) {
-    #team-list {
-      display: flex;
-      flex-wrap: wrap; } }
-  
-  .no-match {
-    background-color: #013369;
-    color: #fff;
-    min-height: 100px;
+@media only screen and (min-width: 992px) {
+  .team-list {
     display: flex;
-    justify-content: center;
-    align-items: center; }
-    @media only screen and (min-width: 992px) {
-      .no-match {
-        width: 50%; } }
-    .no-match h2 {
-      font-size: 24px;
-      font-family: 'Roboto Slab', serif; }
-      @media only screen and (min-width: 992px) {
-        .no-match h2 {
-          font-size: 32px; } }
+    flex-wrap: wrap; 
+  } 
+}
+
+.no-match {
+  background-color: #013369;
+  color: #fff;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+@media only screen and (min-width: 992px) {
+  .no-match {
+    width: 50%; 
+  } 
+}
+
+.no-match h2 {
+  font-size: 24px;
+  font-family: 'Roboto Slab', serif; 
+}
+
+@media only screen and (min-width: 992px) {
+  .no-match h2 {
+    font-size: 32px; 
+  } 
+}
   
-  /* .player-card {
+  .player-card {
     position: relative;
     flex-basis: 48%;
     background-color: #fff;
@@ -223,4 +233,4 @@ aside h2 {
       font-size: 12px; }
     .player-card .stat-block-data {
       margin: 0;
-      font-size: 36px; } */
+      font-size: 36px; }
