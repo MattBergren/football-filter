@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Form, Checkbox } from 'semantic-ui-react';
+import { Form, Checkbox, Card } from 'semantic-ui-react';
 import './App.css';
 import axios from "axios";
 import DropdownTeams from './components/DropdownTeams';
 import RadioPositions from './components/RadioPositions';
 import TogglePro from './components/TogglePro';
+import CardList from './components/CardList';
 
 class App extends Component {
   
@@ -12,11 +13,22 @@ class App extends Component {
   state = {
     team: 'all',
     position: 'all',
-    proBowl: false
+    proBowl: false,
+    players: []
   };
 
   componentDidMount() {
-    
+    axios.post('/api/players', {
+        team: this.state.team,
+        position: this.state.position,
+        proBowl: this.state.proBowl
+    }).then((response) => {
+        this.setState({players: response.data })
+    })
+  }
+
+  componentDidUpdate() {
+    console.log('updated');
   }
 
   onTeamSelect = (team) => {
@@ -32,7 +44,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('render called');
+    console.log('render');
     return (
 
       <div className="ui container">
@@ -46,6 +58,9 @@ class App extends Component {
               <RadioPositions onPositionSelect={this.onPositionSelect}/>
               <TogglePro onProToggle={this.onProToggle} />
             </aside> 
+          </div>
+          <div className="eleven wide column">
+            <CardList players={this.state.players} />
           </div>
         </div>
       </div>

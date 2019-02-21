@@ -12,8 +12,8 @@ const app = express();
 // const router = express.Router();
 
 // MongoDB database
-// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
-const dbRoute = "mongodb://localhost/football-filter";
+const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+// const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(
@@ -37,11 +37,39 @@ app.use(logger("dev"));
 app.get('/api/allTeams', function (req, res) {
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
-            console.log(err);
+        console.log(err);
       } else {
-            res.json({ teams: allTeams });
+          res.json({ teams: allTeams });
       }
   });
+});
+
+app.post('/api/players', function (req, res) {
+  // all teams - all positions - no probowl
+  if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === false) {
+      Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+          if (err) {
+              console.log(err);
+          } else {
+              Player.find({}).lean().exec(function (err, allPlayers) {
+                  if (err) {
+                      console.log(err);
+                  } else {
+                      allPlayers.forEach(function (playerObj) {  
+
+                          allTeams.forEach(function(teamObj){
+                              if(playerObj.team_id == teamObj._id){
+                                  playerObj.team = teamObj;
+                              }
+                          });
+                          
+                      });
+                      res.json(allPlayers);
+                  }
+              });
+          }
+      }); 
+  } 
 });
 
 // // this is our get method

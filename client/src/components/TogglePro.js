@@ -13,7 +13,7 @@ class TogglePro extends Component {
       <div>
         <Checkbox 
             toggle
-            label='Check this box' 
+            label='Pro Bowl' 
             onChange={this.handleChange} 
             checked={this.state.checked} 
         />

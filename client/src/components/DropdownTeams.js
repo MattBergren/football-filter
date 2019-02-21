@@ -21,7 +21,7 @@ class DropdownTeams extends Component {
           .then(resp => resp.json())
           .then(data => {
             const teamList = data.teams.map(team => {
-                return { key: team._id, value: team._id, text: team.city }
+                return { key: team._id, value: team._id, text: `${team.city} ${team.name}` }
             });
             teamList.unshift({ key: 'all', value: 'all', text: 'All teams'});
             this.setState({ teamOptions: teamList });
