@@ -17,18 +17,23 @@ class App extends Component {
     players: []
   };
 
-  componentDidMount() {
+  getDataFromDb = () => {
     axios.post('/api/players', {
-        team: this.state.team,
-        position: this.state.position,
-        proBowl: this.state.proBowl
+      team: this.state.team,
+      position: this.state.position,
+      proBowl: this.state.proBowl
     }).then((response) => {
+      console.log(response.data);
         this.setState({players: response.data })
-    })
+    });
+  };
+
+  componentDidMount() {
+    this.getDataFromDb();
   }
 
   componentDidUpdate() {
-    console.log('updated');
+    console.log('update');
   }
 
   onTeamSelect = (team) => {

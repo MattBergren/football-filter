@@ -51,7 +51,7 @@ app.post('/api/players', function (req, res) {
           if (err) {
               console.log(err);
           } else {
-              Player.find({}).lean().exec(function (err, allPlayers) {
+              Player.find({}).sort({team_id:'asc'}).lean().exec(function (err, allPlayers) {
                   if (err) {
                       console.log(err);
                   } else {
@@ -62,7 +62,6 @@ app.post('/api/players', function (req, res) {
                                   playerObj.team = teamObj;
                               }
                           });
-                          
                       });
                       res.json(allPlayers);
                   }
@@ -70,6 +69,42 @@ app.post('/api/players', function (req, res) {
           }
       }); 
   } 
+
+
+  // all teams - all positions - probowl
+  else if (req.body.team == 'all' && req.body.position == 'all' && req.body.probowl == 'true') {
+    Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+        if (err) {
+            console.log(err);
+        } else {
+            Player.find({proBowler: req.body.probowl}).lean().exec(function (err, allPlayers) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    allPlayers.forEach(function (playerObj) {  
+
+                        allTeams.forEach(function(teamObj){
+                            if(playerObj.team_id == teamObj._id){
+                                playerObj.team = teamObj;
+                            }
+                        });
+                        
+                    });
+                    res.json(allPlayers);
+                }
+            });
+        }
+    }); 
+}
+
+
+
+
+
+
+
+
+
 });
 
 // // this is our get method
