@@ -10,7 +10,7 @@ class TogglePro extends Component {
 
   render() {
     return (
-      <div>
+      <div id="probowl-filter">
         <Checkbox 
             toggle
             label='Pro Bowl' 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Form, Checkbox } from 'semantic-ui-react'
+import { Form, Radio } from 'semantic-ui-react'
 
 class RadioPositions extends Component {
     
-    state = {};
+    state = {
+      value: 'all'
+    };
 
     handleChange = (event, {value}) => {
         this.props.onPositionSelect(value);
@@ -14,52 +16,49 @@ class RadioPositions extends Component {
     return (
       <Form id="position-filter">
         <Form.Field>
-          <Checkbox
-            radio
+          <Radio
             label='All'
-            name='checkboxRadioGroup'
+            name='radioGroup'
             value='all'
             checked={this.state.value === 'all'}
             onChange={this.handleChange}
+          
           />
         </Form.Field>
         <Form.Field>
-          <Checkbox
-            radio
+          <Radio
             label='QB'
-            name='checkboxRadioGroup'
-            value='qb'
-            checked={this.state.value === 'qb'}
+            name='radioGroup'
+            value='QB'
+            checked={this.state.value === 'QB'}
             onChange={this.handleChange}
           />
         </Form.Field>
         <Form.Field>
-          <Checkbox
-            radio
+          <Radio
             label='RB'
-            name='checkboxRadioGroup'
-            value='rb'
-            checked={this.state.value === 'rb'}
+            name='radioGroup'
+            value='RB'
+            checked={this.state.value === 'RB'}
             onChange={this.handleChange}
           />
         </Form.Field>
         <Form.Field>
-          <Checkbox
-            radio
+          <Radio
             label='WR'
-            name='checkboxRadioGroup'
-            value='wr'
-            checked={this.state.value === 'wr'}
+            name='radioGroup'
+            value='WR'
+            checked={this.state.value === 'WR'}
             onChange={this.handleChange}
           />
         </Form.Field>
         <Form.Field>
-          <Checkbox
+          <Radio
             radio
             label='TE'
             name='checkboxRadioGroup'
-            value='te'
-            checked={this.state.value === 'te'}
+            value='TE'
+            checked={this.state.value === 'TE'}
             onChange={this.handleChange}
           />
         </Form.Field>

@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('render app');
     return (
       <div className="ui container">
         <div className="ui stackable grid">

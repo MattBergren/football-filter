@@ -12,8 +12,8 @@ const app = express();
 // const router = express.Router();
 
 // MongoDB database
-const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
-// const dbRoute = "mongodb://localhost/football-filter";
+// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(
@@ -35,7 +35,6 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 
 app.get('/api/allTeams', function (req, res) {
-    console.log('allteams');
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
         console.log(err);
@@ -46,142 +45,223 @@ app.get('/api/allTeams', function (req, res) {
 });
 
 app.post('/api/players', function (req, res) {
-  // all teams - all positions - no probowl
-  if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === false) {
-      Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
-          if (err) {
-              console.log(err);
-          } else {
-              Player.find({}).sort({team_id:'asc'}).lean().exec(function (err, allPlayers) {
-                  if (err) {
-                      console.log(err);
-                  } else {
-                      allPlayers.forEach(function (playerObj) {  
+    // all teams - all positions - no probowl
+    if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === false) {
+        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+            if (err) {
+                console.log(err);
+            } else {
+                Player.find({}).sort({team_id:'asc'}).lean().exec(function (err, allPlayers) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        allPlayers.forEach(function (playerObj) {  
 
-                          allTeams.forEach(function(teamObj){
-                              if(playerObj.team_id == teamObj._id){
-                                  playerObj.team = teamObj;
-                              }
-                          });
-                      });
-                      res.json(allPlayers);
-                  }
-              });
-          }
-      }); 
-  } 
-  // all teams - all positions - probowl
-  else if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === true) {
-    Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
-        if (err) {
-            console.log(err);
-        } else {
-            Player.find({proBowler: req.body.proBowl}).lean().exec(function (err, allPlayers) {
-                if (err) {
-                    console.log(err);
+                            allTeams.forEach(function(teamObj){
+                                if(playerObj.team_id == teamObj._id){
+                                    playerObj.team = teamObj;
+                                }
+                            });
+                        });
+                        res.json(allPlayers);
+                    }
+                });
+            }
+        }); 
+    } 
+    // all teams - all positions - probowl
+    else if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === true) {
+        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+            if (err) {
+                console.log(err);
+            } else {
+                Player.find({proBowler: req.body.proBowl}).lean().exec(function (err, allPlayers) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        allPlayers.forEach(function (playerObj) {  
+
+                            allTeams.forEach(function(teamObj){
+                                if(playerObj.team_id == teamObj._id){
+                                    playerObj.team = teamObj;
+                                }
+                            });
+                            
+                        });
+                        res.json(allPlayers);
+                    }
+                });
+            }
+        }); 
+    }
+    // all teams - position - no probowl
+    else if (req.body.team === 'all' && req.body.position !== 'all' && req.body.proBowl === false) {
+        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+            if (err) {
+                console.log(err);
+            } else {
+                if (req.body.position === 'QB') {
+                    Player.find({position: req.body.position}).sort({passYds:'desc'}).lean().exec(function (err, allPlayers) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            allPlayers.forEach(function (playerObj) {  
+                                allTeams.forEach(function(teamObj){
+                                    if(playerObj.team_id == teamObj._id){
+                                        playerObj.team = teamObj;
+                                    }
+                                });
+                            });
+                            res.json(allPlayers);
+                        }
+                    });
+                } else if(req.body.position === 'RB') {
+                    Player.find({position: req.body.position}).sort({rushYds:'desc'}).lean().exec(function (err, allPlayers) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            allPlayers.forEach(function (playerObj) {  
+                                allTeams.forEach(function(teamObj){
+                                    if(playerObj.team_id == teamObj._id){
+                                        playerObj.team = teamObj;
+                                    }
+                                });
+                            });
+                            res.json(allPlayers);
+                        }
+                    });
                 } else {
-                    allPlayers.forEach(function (playerObj) {  
+                    Player.find({position: req.body.position}).sort({recYds:'desc'}).lean().exec(function (err, allPlayers) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            allPlayers.forEach(function (playerObj) {  
+                                allTeams.forEach(function(teamObj){
+                                    if(playerObj.team_id == teamObj._id){
+                                        playerObj.team = teamObj;
+                                    }
+                                });
+                            });
+                            res.json(allPlayers);
+                        }
+                    });
+                }
+            }
+        }); 
+    } 
+    // all teams - position - probowl
+    else if (req.body.team === 'all' && req.body.position !== 'all' && req.body.proBowl === true) {
+        Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+            if (err) {
+                console.log(err);
+            } else {
+                Player.find({position: req.body.position, proBowler: req.body.proBowl}).lean().exec(function (err, allPlayers) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        allPlayers.forEach(function (playerObj) {  
 
-                        allTeams.forEach(function(teamObj){
-                            if(playerObj.team_id == teamObj._id){
-                                playerObj.team = teamObj;
+                            allTeams.forEach(function(teamObj){
+                                if(playerObj.team_id == teamObj._id){
+                                    playerObj.team = teamObj;
+                                }
+                            });
+                            
+                        });
+                        res.json(allPlayers);
+                    }
+                });
+            }
+        }); 
+    } 
+    // team - all positions - no probowl
+    else if (req.body.team !== 'all' && req.body.position === 'all' && req.body.proBowl === false) {
+        Team.findById(req.body.team, function(err, currentTeam){
+            if (err) {
+                console.log(err);
+            } 
+            else {
+                Player.find({team_id: req.body.team}).lean().exec(function (err, allPlayers) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        allPlayers.forEach(function (playerObj) {  
+                            if(playerObj.team_id == currentTeam._id){
+                                playerObj.team = currentTeam;
                             }
                         });
-                        
-                    });
-                    res.json(allPlayers);
-                }
-            });
-        }
-    }); 
-}
- // all teams - position - no probowl
- else if (req.body.team === 'all' && req.body.position !== 'all' && req.body.proBowl === false) {
-    Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
-        if (err) {
-            console.log(err);
-        } else {
-            Player.find({position: req.body.position}).lean().exec(function (err, allPlayers) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    allPlayers.forEach(function (playerObj) {  
-
-                        allTeams.forEach(function(teamObj){
-                            if(playerObj.team_id == teamObj._id){
-                                playerObj.team = teamObj;
+                        res.json(allPlayers);
+                    }
+                });
+            }
+        }); 
+    } 
+    // team - all positions - probowl
+    else if (req.body.team !== 'all' && req.body.position === 'all' && req.body.proBowl === true) {
+        Team.findById(req.body.team, function(err, currentTeam){
+            if (err) {
+                console.log(err);
+            } 
+            else {
+                Player.find({team_id: req.body.team, proBowler: req.body.proBowl}).lean().exec(function (err, allPlayers) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        allPlayers.forEach(function (playerObj) {  
+                            if(playerObj.team_id == currentTeam._id){
+                                playerObj.team = currentTeam;
                             }
                         });
-                        
-                    });
-                    res.json(allPlayers);
-                }
-            });
-        }
-    }); 
-} 
+                        res.json(allPlayers);
+                    }
+                });
+            }
+        }); 
+    }
+    // team - position - no probowl
+    else if (req.body.team !== 'all' && req.body.position !== 'all' && req.body.proBowl === false) {
+        Player.find({ team_id: req.body.team, position: req.body.position }).lean().exec(function(err, players){
+            console.log(req.body);
+            if(err){
+                console.log(err);
+            } else {
+                Team.findById(req.body.team, function(err, team){
+                    if(err){
+                        console.log(err);
+                    } else {                  
+                        players.forEach(function (obj) {
+                            obj.team = team;
+                        });
 
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    }
+    // team - position - probowl
+    else {
+        Player.find({ team_id: req.body.team, position: req.body.position, proBowler: req.body.proBowl }).lean().exec(function(err, players){
+            console.log(req.body);
+            if(err){
+                console.log(err);
+            } else {
+                Team.findById(req.body.team, function(err, team){
+                    if(err){
+                        console.log(err);
+                    } else {                  
+                        players.forEach(function (obj) {
+                            obj.team = team;
+                        });
 
-
-
-
-
-
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    }
 
 });
-
-// // this is our get method
-// // this method fetches all available data in our database
-// router.get("/getData", (req, res) => {
-//   Data.find((err, data) => {
-//     if (err) return res.json({ success: false, error: err });
-//     return res.json({ success: true, data: data });
-//   });
-// });
-
-// // this is our update method
-// // this method overwrites existing data in our database
-// router.post("/updateData", (req, res) => {
-//   const { id, update } = req.body;
-//   Data.findOneAndUpdate(id, update, err => {
-//     if (err) return res.json({ success: false, error: err });
-//     return res.json({ success: true });
-//   });
-// });
-
-// // this is our delete method
-// // this method removes existing data in our database
-// router.delete("/deleteData", (req, res) => {
-//   const { id } = req.body;
-//   Data.findOneAndDelete(id, err => {
-//     if (err) return res.send(err);
-//     return res.json({ success: true });
-//   });
-// });
-
-// // this is our create methid
-// // this method adds new data in our database
-// router.post("/putData", (req, res) => {
-//   let data = new Data();
-
-//   const { id, message } = req.body;
-
-//   if ((!id && id !== 0) || !message) {
-//     return res.json({
-//       success: false,
-//       error: "INVALID INPUTS"
-//     });
-//   }
-//   data.message = message;
-//   data.id = id;
-//   data.save(err => {
-//     if (err) return res.json({ success: false, error: err });
-//     return res.json({ success: true });
-//   });
-// });
-
-// // append /api for our http requests
-// app.use("/api", router);
 
 // // launch our backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
