@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Form, Checkbox, Card } from 'semantic-ui-react';
 import './App.css';
-import axios from "axios";
 import DropdownTeams from './components/DropdownTeams';
 import RadioPositions from './components/RadioPositions';
 import TogglePro from './components/TogglePro';
@@ -13,28 +11,8 @@ class App extends Component {
   state = {
     team: 'all',
     position: 'all',
-    proBowl: false,
-    players: []
+    proBowl: false
   };
-
-  getDataFromDb = () => {
-    axios.post('/api/players', {
-      team: this.state.team,
-      position: this.state.position,
-      proBowl: this.state.proBowl
-    }).then((response) => {
-      console.log(response.data);
-        this.setState({players: response.data })
-    });
-  };
-
-  componentDidMount() {
-    this.getDataFromDb();
-  }
-
-  componentDidUpdate() {
-    console.log('update');
-  }
 
   onTeamSelect = (team) => {
     this.setState({ team });
@@ -49,9 +27,8 @@ class App extends Component {
   }
 
   render() {
-    console.log('render');
+    console.log('render app');
     return (
-
       <div className="ui container">
         <div className="ui stackable grid">
           <div className="five wide column">
@@ -65,7 +42,11 @@ class App extends Component {
             </aside> 
           </div>
           <div className="eleven wide column">
-            <CardList players={this.state.players} />
+            <CardList 
+              team={this.state.team} 
+              position={this.state.position} 
+              proBowl={this.state.proBowl} 
+            />
           </div>
         </div>
       </div>

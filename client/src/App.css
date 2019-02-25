@@ -64,6 +64,15 @@ aside h2 {
     display: flex;
     flex-wrap: wrap; 
   } 
+
+  .team-list > div {
+    flex-basis: 48%;
+  }
+
+  .team-list > div:nth-of-type(odd) {
+    margin-right: 3.5%; 
+  } 
+
 }
 
 .no-match {
@@ -92,15 +101,13 @@ aside h2 {
   } 
 }
   
-  .player-card {
-    position: relative;
-    flex-basis: 48%;
-    background-color: #fff;
-    margin-bottom: 28px; }
-    @media only screen and (min-width: 992px) {
-      .player-card:nth-of-type(odd) {
-        margin-right: 3.5%; } }
-    .player-card-header {
+.player-card {
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 28px; 
+}
+
+.player-card-header {
       height: 50px;
       display: flex;
       align-items: center; }
@@ -234,3 +241,32 @@ aside h2 {
     .player-card .stat-block-data {
       margin: 0;
       font-size: 36px; }
+
+
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: 300ms linear;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}

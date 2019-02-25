@@ -12,8 +12,8 @@ const app = express();
 // const router = express.Router();
 
 // MongoDB database
-// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
-const dbRoute = "mongodb://localhost/football-filter";
+const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+// const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(
@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 
 app.get('/api/allTeams', function (req, res) {
+    console.log('allteams');
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
         console.log(err);
@@ -69,15 +70,13 @@ app.post('/api/players', function (req, res) {
           }
       }); 
   } 
-
-
   // all teams - all positions - probowl
-  else if (req.body.team == 'all' && req.body.position == 'all' && req.body.probowl == 'true') {
+  else if (req.body.team === 'all' && req.body.position === 'all' && req.body.proBowl === true) {
     Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
         if (err) {
             console.log(err);
         } else {
-            Player.find({proBowler: req.body.probowl}).lean().exec(function (err, allPlayers) {
+            Player.find({proBowler: req.body.proBowl}).lean().exec(function (err, allPlayers) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -96,7 +95,31 @@ app.post('/api/players', function (req, res) {
         }
     }); 
 }
+ // all teams - position - no probowl
+ else if (req.body.team === 'all' && req.body.position !== 'all' && req.body.proBowl === false) {
+    Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
+        if (err) {
+            console.log(err);
+        } else {
+            Player.find({position: req.body.position}).lean().exec(function (err, allPlayers) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    allPlayers.forEach(function (playerObj) {  
 
+                        allTeams.forEach(function(teamObj){
+                            if(playerObj.team_id == teamObj._id){
+                                playerObj.team = teamObj;
+                            }
+                        });
+                        
+                    });
+                    res.json(allPlayers);
+                }
+            });
+        }
+    }); 
+} 
 
 
 
