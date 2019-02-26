@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
+const path = require('path');
 
 // data models
 const Player = require('./models/player');
@@ -12,8 +13,8 @@ const app = express();
 // const router = express.Router();
 
 // MongoDB database
-const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
-// const dbRoute = "mongodb://localhost/football-filter";
+// const dbRoute = "mongodb://bergy:password@ds247569.mlab.com:47569/football-filter";
+const dbRoute = "mongodb://localhost/football-filter";
 
 // connects our back end code with the database
 mongoose.connect(
@@ -34,9 +35,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'));
-  });
 app.get('/api/allTeams', function (req, res) {
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
@@ -266,7 +264,13 @@ app.post('/api/players', function (req, res) {
 
 });
 
-// // launch our backend into a port
-// app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
 
 app.listen(process.env.PORT || 3001);
