@@ -34,6 +34,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/public/index.html'));
+  });
 app.get('/api/allTeams', function (req, res) {
   Team.find({}).sort({city:'asc'}).exec(function(err, allTeams){
       if(err) {
